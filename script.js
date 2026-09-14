@@ -548,7 +548,7 @@ function mostrarMarcadores(lista) {
 
     limparMarcadores();
 
-    const icone = criarIconeVermelho();
+    const locaisPorCoordenada = {};
 
     lista.forEach((local) => {
 
@@ -563,62 +563,90 @@ function mostrarMarcadores(lista) {
             return;
         }
 
-        const marcador = L.marker(
-            [lat, lng],
-            {
-                icon: icone
+        const chave = `${lat},${lng}`;
+
+        if (!locaisPorCoordenada[chave]) {
+            locaisPorCoordenada[chave] = [];
+        }
+
+        locaisPorCoordenada[chave].push(local);
+    });
+
+    Object.values(locaisPorCoordenada).forEach((grupo) => {
+
+        grupo.forEach((local, indice) => {
+
+            let lat = Number(local.lat);
+            let lng = Number(local.lng);
+
+            if (grupo.length > 1) {
+
+                const angulo =
+                    (2 * Math.PI * indice) / grupo.length;
+
+                const distancia = 0.004;
+
+                lat += Math.cos(angulo) * distancia;
+                lng += Math.sin(angulo) * distancia;
             }
-        ).addTo(mapa);
 
-        const contatoTelefone = local.telefone
-            ? `<div><strong>Telefone:</strong> ${local.telefone}</div>`
-            : "";
+            const marcador = L.marker(
+                [lat, lng],
+                {
+                    icon: criarIconeVermelho()
+                }
+            ).addTo(mapa);
 
-        const contatoEmail = local.email
-            ? `<div><strong>E-mail:</strong> ${local.email}</div>`
-            : "";
+            const contatoTelefone = local.telefone
+                ? `<div><strong>Telefone:</strong> ${local.telefone}</div>`
+                : "";
 
-        const empresa = local.empresa
-            ? `<div><strong>Oferecida por:</strong> ${local.empresa}</div>`
-            : "";
+            const contatoEmail = local.email
+                ? `<div><strong>E-mail:</strong> ${local.email}</div>`
+                : "";
 
-        const popup = `
-            <div class="popup-moveon">
+            const empresa = local.empresa
+                ? `<div><strong>Oferecida por:</strong> ${local.empresa}</div>`
+                : "";
 
-                <h3>${local.titulo || "Espaço disponível"}</h3>
+            const popup = `
+                <div class="popup-moveon">
 
-                <p>${local.descricao || ""}</p>
+                    <h3>${local.titulo || "Espaço disponível"}</h3>
 
-                <p>
-                    <strong>Capacidade:</strong>
-                    ${local.capacidade || "Não informado"}
-                </p>
+                    <p>${local.descricao || ""}</p>
 
-                <p>
-                    <strong>Disponibilidade:</strong>
-                    ${local.data || "Não informado"}
-                </p>
+                    <p>
+                        <strong>Capacidade:</strong>
+                        ${local.capacidade || "Não informado"}
+                    </p>
 
-                ${empresa}
+                    <p>
+                        <strong>Disponibilidade:</strong>
+                        ${local.data || "Não informado"}
+                    </p>
 
-                <hr>
+                    ${empresa}
 
-                ${contatoTelefone}
-                ${contatoEmail}
+                    <hr>
 
-            </div>
-        `;
+                    ${contatoTelefone}
+                    ${contatoEmail}
 
-        marcador.bindPopup(popup);
+                </div>
+            `;
 
-        marcadores.push(marcador);
+            marcador.bindPopup(popup);
+
+            marcadores.push(marcador);
+        });
     });
 
     const contador = document.getElementById("contadorEspacos");
 
     if (contador) {
         contador.textContent =
-            `${lista.length} espaços encontrados`;
+            `${marcadores.length} espaços encontrados`;
     }
 
     console.log(
