@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moveon | Área do cliente</title>
+
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Moveon">
+        </a>
+
+        <a href="../index.html" class="voltar">
+            Voltar para o site
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="card">
+
+            <div class="logo-login">
+                <img src="../assets/logo.png" alt="Moveon">
+            </div>
+
+            <div id="telaLogin">
+
+                <h1>Área do cliente</h1>
+
+                <p class="descricao">
+                    Entre na sua conta para oferecer ou encontrar espaços.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="campo">
+                        <label for="loginEmail">E-mail</label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="empresa@email.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="loginSenha">Senha</label>
+
+                        <input
+                            type="password"
+                            id="loginSenha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="botao">
+                        Entrar
+                    </button>
+
+                    <div id="mensagemLogin" class="mensagem"></div>
+
+                </form>
+
+                <div class="separador">
+                    <span>ou</span>
+                </div>
+
+                <p class="troca">
+                    Sua empresa ainda não possui uma conta?
+                </p>
+
+                <button id="mostrarCadastro" class="botao-secundario">
+                    Criar conta
+                </button>
+
+            </div>
+
+
+            <div id="telaCadastro" style="display: none;">
+
+                <h1>Criar conta</h1>
+
+                <p class="descricao">
+                    Cadastre sua empresa para começar a utilizar a Moveon.
+                </p>
+
+                <form id="cadastroForm">
+
+                    <div class="campo">
+                        <label for="cadastroNome">Nome da empresa</label>
+
+                        <input
+                            type="text"
+                            id="cadastroNome"
+                            placeholder="Nome da empresa"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cadastroCnpj">CNPJ</label>
+
+                        <input
+                            type="text"
+                            id="cadastroCnpj"
+                            placeholder="00.000.000/0000-00"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cadastroCep">CEP</label>
+
+                        <input
+                            type="text"
+                            id="cadastroCep"
+                            placeholder="00000-000"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cadastroEmail">E-mail</label>
+
+                        <input
+                            type="email"
+                            id="cadastroEmail"
+                            placeholder="empresa@email.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cadastroSenha">Senha</label>
+
+                        <input
+                            type="password"
+                            id="cadastroSenha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="botao">
+                        Criar conta
+                    </button>
+
+                    <div id="mensagemCadastro" class="mensagem"></div>
+
+                </form>
+
+                <div class="separador">
+                    <span>ou</span>
+                </div>
+
+                <button id="mostrarLogin" class="botao-secundario">
+                    Voltar para o login
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Moveon. Transforme o Brasil.</p>
+    </footer>
+
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

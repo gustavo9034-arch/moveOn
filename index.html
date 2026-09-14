@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moveon | Transforme o Brasil</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <a
+        href="#inicio"
+        class="logo"
+        onclick="abrirAba('inicio')"
+    >
+
+        <img
+            src="assets/logo.png"
+            alt="Moveon"
+        >
+
+    </a>
+
+
+    <nav class="nav">
+
+        <a
+            href="#inicio"
+            onclick="abrirAba('inicio')"
+        >
+            Início
+        </a>
+
+        <a
+            href="#oferecer"
+            onclick="abrirAba('oferecer')"
+        >
+            Oferecer espaço
+        </a>
+
+        <a
+            href="#especificacoes"
+            onclick="abrirAba('especificacoes')"
+        >
+            Especificações
+        </a>
+
+        <a
+            href="#mapa"
+            onclick="abrirAba('mapa')"
+        >
+            Mapa
+        </a>
+
+        <a
+            href="#alugar"
+            onclick="abrirAba('alugar')"
+        >
+            Encontrar espaço
+        </a>
+
+        <a
+            href="#contato"
+            onclick="abrirAba('contato')"
+        >
+            Contato
+        </a>
+
+    </nav>
+
+
+<button class="cliente-btn" onclick="window.location.href='login/index.html'">
+    Área do cliente
+</button>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     INÍCIO
+===================================================== -->
+
+<section
+    id="inicio"
+    class="pagina ativa"
+>
+
+
+    <div class="hero">
+
+        <div class="hero-bg"></div>
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-text">
+
+                <div class="tag">
+                    MOVEON · TRANSFORME O BRASIL
+                </div>
+
+
+                <h1>
+                    Transporte mais.
+                    <span>
+                        Ocupe menos.
+                    </span>
+                </h1>
+
+
+                <p>
+
+                    A Moveon conecta empresas que possuem espaço
+                    disponível em veículos ou armazéns com empresas
+                    que precisam transportar ou armazenar suas cargas.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="btn btn-red"
+                        onclick="abrirAba('alugar')"
+                    >
+                        Encontrar espaço
+                    </button>
+
+
+                    <button
+                        class="btn btn-outline"
+                        onclick="abrirAba('oferecer')"
+                    >
+                        Oferecer espaço
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+
+                    <span class="online"></span>
+
+                    MOVEON
+
+                </div>
+
+
+                <h2>
+                    Aproveite espaços que já existem.
+                </h2>
+
+
+                <p>
+
+                    Conectamos transporte e armazenamento que já
+                    possuem capacidade disponível a empresas que
+                    precisam desses espaços.
+
+                </p>
+
+
+                <div class="oferta-opcoes">
+
+
+                    <button
+                        onclick="mostrarOferta('transporte')"
+                    >
+
+                        <div>
+
+                            <strong>
+                                Transporte
+                            </strong>
+
+                            <small>
+                                Espaço disponível em veículos
+                            </small>
+
+                        </div>
+
+                    </button>
+
+
+
+                    <button
+                        onclick="mostrarOferta('armazem')"
+                    >
+
+                        <div>
+
+                            <strong>
+                                Armazém
+                            </strong>
+
+                            <small>
+                                Espaço disponível para estoque
+                            </small>
+
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <section class="inicio-funciona">
+
+
+        <div class="secao-titulo">
+
+            <span>
+                COMO FUNCIONA
+            </span>
+
+            <h2>
+
+                Simples para quem oferece.
+
+                <strong>
+                    Simples para quem procura.
+                </strong>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="funciona-grid">
+
+
+            <div class="funciona-item">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Ofereça seu espaço
+                </h3>
+
+                <p>
+                    Cadastre o espaço disponível em seu veículo
+                    ou armazém.
+                </p>
+
+            </div>
+
+
+
+            <div class="funciona-item">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Encontre uma oportunidade
+                </h3>
+
+                <p>
+                    Empresas procuram espaços de acordo
+                    com suas necessidades.
+                </p>
+
+            </div>
+
+
+
+            <div class="funciona-item">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Conecte os dois
+                </h3>
+
+                <p>
+                    A Moveon aproxima quem tem espaço
+                    de quem precisa dele.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="inicio-cta">
+
+        <div>
+
+            <span>
+                MOVEON
+            </span>
+
+            <h2>
+
+                Aproveite melhor
+
+                <strong>
+                    o espaço que já existe.
+                </strong>
+
+            </h2>
+
+        </div>
+
+
+        <button
+            class="btn btn-red"
+            onclick="abrirAba('alugar')"
+        >
+            Explorar espaços
+        </button>
+
+    </section>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     OFERECER ESPAÇO
+===================================================== -->
+
+<section
+    id="oferecer"
+    class="pagina"
+>
+
+
+    <div class="pagina-header">
+
+        <span>
+            MOVEON · OFERECER ESPAÇO
+        </span>
+
+        <h1>
+            Tem espaço sobrando?
+            <strong>
+                Transforme em oportunidade.
+            </strong>
+        </h1>
+
+        <p>
+
+            Cadastre o espaço disponível no seu caminhão,
+            veículo ou armazém e conecte sua empresa a
+            quem precisa dele.
+
+        </p>
+
+    </div>
+
+
+
+    <section class="oferecer-escolha">
+
+
+        <div class="oferta-intro">
+
+            <span>
+                CADASTRE UM ESPAÇO
+            </span>
+
+            <h2>
+                O que você quer disponibilizar?
+            </h2>
+
+            <p>
+                Escolha uma opção para cadastrar seu espaço.
+            </p>
+
+        </div>
+
+
+
+        <div class="oferta-opcoes-grandes">
+
+
+            <button
+                onclick="mostrarOferta('transporte')"
+                class="oferta-card"
+            >
+
+                <div>
+
+                    <strong>
+                        Transporte
+                    </strong>
+
+                    <p>
+                        Espaço disponível em caminhão ou veículo.
+                    </p>
+
+                </div>
+
+            </button>
+
+
+
+            <button
+                onclick="mostrarOferta('armazem')"
+                class="oferta-card"
+            >
+
+                <div>
+
+                    <strong>
+                        Armazém
+                    </strong>
+
+                    <p>
+                        Espaço disponível em galpão ou armazém.
+                    </p>
+
+                </div>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="oferecer-form-section">
+
+
+        <!-- TRANSPORTE -->
+
+        <div
+            id="ofertaTransporte"
+            class="oferta-box"
+        >
+
+            <div class="box-heading">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        Espaço disponível em transporte
+                    </h2>
+
+                    <p>
+                        Cadastre uma rota que seu veículo já irá realizar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        Localização de saída
+                    </label>
+
+                    <input
+                        id="ofertaOrigem"
+                        type="text"
+                        placeholder="Ex: São Paulo"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Destino
+                    </label>
+
+                    <input
+                        id="ofertaDestino"
+                        type="text"
+                        placeholder="Ex: Campinas"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Espaço disponível (m³)
+                    </label>
+
+                    <input
+                        id="ofertaVolume"
+                        type="number"
+                        placeholder="Ex: 15"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Peso disponível (kg)
+                    </label>
+
+                    <input
+                        id="ofertaPeso"
+                        type="number"
+                        placeholder="Ex: 1000"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Data da viagem
+                    </label>
+
+                    <input
+                        id="ofertaData"
+                        type="date"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Tipo de carga aceita
+                    </label>
+
+                    <select id="ofertaTipoCarga">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="carga-pequena">
+                            Carga pequena
+                        </option>
+
+                        <option value="moveis">
+                            Móveis e mudanças
+                        </option>
+
+                        <option value="carga-empresarial">
+                            Carga empresarial
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Telefone para contato
+                    </label>
+
+                    <input
+                        id="ofertaTelefone"
+                        type="tel"
+                        placeholder="Ex: (11) 99999-9999"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        E-mail para contato
+                    </label>
+
+                    <input
+                        id="ofertaEmail"
+                        type="email"
+                        placeholder="Ex: empresa@email.com"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                class="btn btn-red btn-full"
+                onclick="cadastrarTransporte()"
+            >
+                Disponibilizar espaço
+            </button>
+
+
+            <div id="resultadoOfertaTransporte" class="resultado-oferta"></div>
+
+
+        </div>
+
+
+
+        <!-- ARMAZÉM -->
+
+        <div
+            id="ofertaArmazem"
+            class="oferta-box hidden"
+        >
+
+            <div class="box-heading">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h2>
+                        Espaço disponível em armazém
+                    </h2>
+
+                    <p>
+                        Cadastre espaço livre no seu galpão ou armazém.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        Localização
+                    </label>
+
+                    <input
+                        id="ofertaArmLocal"
+                        type="text"
+                        placeholder="Ex: Guarulhos"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Capacidade disponível (m³)
+                    </label>
+
+                    <input
+                        id="ofertaArmCapacidade"
+                        type="number"
+                        placeholder="Ex: 250"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Disponível por quanto tempo?
+                    </label>
+
+                    <select id="ofertaArmTempo">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>
+                            Até 7 dias
+                        </option>
+
+                        <option>
+                            8 a 30 dias
+                        </option>
+
+                        <option>
+                            1 a 3 meses
+                        </option>
+
+                        <option>
+                            Mais de 3 meses
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Tipo de carga aceita
+                    </label>
+
+                    <select id="ofertaArmTipo">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="carga-pequena">
+                            Carga pequena
+                        </option>
+
+                        <option value="moveis">
+                            Móveis e mudanças
+                        </option>
+
+                        <option value="carga-empresarial">
+                            Carga empresarial
+                        </option>
+
+                        <option value="armazenamento">
+                            Armazenamento
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Telefone para contato
+                    </label>
+
+                    <input
+                        id="ofertaArmTelefone"
+                        type="tel"
+                        placeholder="Ex: (11) 99999-9999"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        E-mail para contato
+                    </label>
+
+                    <input
+                        id="ofertaArmEmail"
+                        type="email"
+                        placeholder="Ex: empresa@email.com"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                class="btn btn-red btn-full"
+                onclick="cadastrarArmazem()"
+            >
+                Disponibilizar armazém
+            </button>
+
+
+            <div id="resultadoOfertaArmazem" class="resultado-oferta"></div>
+
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ESPECIFICAÇÕES
+===================================================== -->
+
+<section
+    id="especificacoes"
+    class="pagina"
+>
+
+
+    <div class="pagina-header">
+
+        <span>
+            MOVEON · ESPECIFICAÇÕES
+        </span>
+
+        <h1>
+            Encontre o espaço
+            <strong>
+                certo para sua carga.
+            </strong>
+        </h1>
+
+        <p>
+            Escolha o tipo de carga que você precisa transportar
+            ou armazenar.
+        </p>
+
+    </div>
+
+
+
+    <section class="especificacoes-grid">
+
+
+        <article
+            class="spec-card"
+            onclick="filtrarEspecificacao('carga-pequena')"
+        >
+
+            <div class="spec-num">
+                01
+            </div>
+
+            <h3>
+                Carga pequena
+            </h3>
+
+            <p>
+                Encontre espaço disponível para volumes menores
+                sem precisar contratar um veículo inteiro.
+            </p>
+
+            <span>
+                Ideal para pequenas empresas →
+            </span>
+
+        </article>
+
+
+
+        <article
+            class="spec-card"
+            onclick="filtrarEspecificacao('moveis')"
+        >
+
+            <div class="spec-num">
+                02
+            </div>
+
+            <h3>
+                Móveis e mudanças
+            </h3>
+
+            <p>
+                Espaços disponíveis em veículos compatíveis
+                com móveis, caixas e outros objetos.
+            </p>
+
+            <span>
+                Residencial e empresarial →
+            </span>
+
+        </article>
+
+
+
+        <article
+            class="spec-card"
+            onclick="filtrarEspecificacao('carga-empresarial')"
+        >
+
+            <div class="spec-num">
+                03
+            </div>
+
+            <h3>
+                Carga empresarial
+            </h3>
+
+            <p>
+                Soluções para empresas que precisam transportar
+                mercadorias entre diferentes cidades.
+            </p>
+
+            <span>
+                Rotas nacionais →
+            </span>
+
+        </article>
+
+
+
+        <article
+            class="spec-card"
+            onclick="filtrarEspecificacao('armazenamento')"
+        >
+
+            <div class="spec-num">
+                04
+            </div>
+
+            <h3>
+                Armazenamento
+            </h3>
+
+            <p>
+                Encontre espaços para armazenar produtos,
+                equipamentos ou mercadorias por determinado período.
+            </p>
+
+            <span>
+                Curto e médio prazo →
+            </span>
+
+        </article>
+
+
+    </section>
+
+
+
+    <section class="spec-cta">
+
+        <div>
+
+            <span>
+                MOVEON
+            </span>
+
+            <h2>
+                Escolha sua necessidade.
+                <strong>
+                    Encontre o espaço.
+                </strong>
+            </h2>
+
+        </div>
+
+
+        <button
+            class="btn btn-red"
+            onclick="abrirAba('alugar')"
+        >
+            Encontrar espaço
+        </button>
+
+    </section>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     MAPA
+===================================================== -->
+
+<section
+    id="mapa"
+    class="pagina"
+>
+
+
+    <div class="pagina-header mapa-header">
+
+        <span>
+            MOVEON · MAPA
+        </span>
+
+        <h1>
+            Espaços disponíveis
+            <strong>
+                pelo Brasil.
+            </strong>
+        </h1>
+
+        <p>
+            Encontre veículos e armazéns disponíveis de acordo
+            com seus filtros.
+        </p>
+
+    </div>
+
+
+
+    <section class="mapa-area">
+
+
+        <aside class="mapa-sidebar">
+
+
+            <h2>
+                Filtrar espaços
+            </h2>
+
+
+            <div class="campo">
+
+                <label>
+                    Localização ou destino
+                </label>
+
+                <input
+                    id="buscaMapa"
+                    type="text"
+                    placeholder="Ex: São Paulo"
+                    oninput="buscarMapa()"
+                >
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Tipo de espaço
+                </label>
+
+                <select
+                    id="filtroTipoEspaco"
+                    onchange="aplicarFiltrosDoMapa()"
+                >
+
+                    <option value="">
+                        Todos
+                    </option>
+
+                    <option value="transporte">
+                        Transporte
+                    </option>
+
+                    <option value="armazem">
+                        Armazém
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Tipo de carga
+                </label>
+
+                <select
+                    id="filtroTipoCarga"
+                    onchange="aplicarFiltrosDoMapa()"
+                >
+
+                    <option value="">
+                        Todos
+                    </option>
+
+                    <option value="carga-pequena">
+                        Carga pequena
+                    </option>
+
+                    <option value="moveis">
+                        Móveis e mudanças
+                    </option>
+
+                    <option value="carga-empresarial">
+                        Carga empresarial
+                    </option>
+
+                    <option value="armazenamento">
+                        Armazenamento
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <button
+                class="btn btn-red btn-full"
+                onclick="limparFiltrosMapa()"
+            >
+                Limpar filtros
+            </button>
+
+
+
+            <div class="resultado-contador">
+
+                <strong id="contadorEspacos">
+                    0 espaços
+                </strong>
+
+                <span>
+                    resultados encontrados
+                </span>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <div class="mapa-principal">
+
+            <div id="map"></div>
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ENCONTRAR ESPAÇO
+===================================================== -->
+
+<section
+    id="alugar"
+    class="pagina"
+>
+
+
+    <div class="pagina-header">
+
+        <span>
+            MOVEON · ENCONTRAR ESPAÇO
+        </span>
+
+        <h1>
+            Encontre o espaço
+            <strong>
+                que sua empresa precisa.
+            </strong>
+        </h1>
+
+        <p>
+            Informe as características da sua carga e encontre
+            espaços disponíveis compatíveis.
+        </p>
+
+    </div>
+
+
+
+    <section class="alugar-section">
+
+
+        <!-- TRANSPORTE -->
+
+        <div class="alugar-box">
+
+
+            <div class="box-heading">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        Encontrar espaço em transporte
+                    </h2>
+
+                    <p>
+                        Procure espaço disponível em veículos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        Localização / origem
+                    </label>
+
+                    <input
+                        id="alugarOrigem"
+                        type="text"
+                        placeholder="Ex: São Paulo"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Destino
+                    </label>
+
+                    <input
+                        id="alugarDestino"
+                        type="text"
+                        placeholder="Ex: Campinas"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Metros cúbicos necessários
+                    </label>
+
+                    <input
+                        id="alugarVolume"
+                        type="number"
+                        placeholder="Ex: 5"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Peso necessário (kg)
+                    </label>
+
+                    <input
+                        id="alugarPeso"
+                        type="number"
+                        placeholder="Ex: 300"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Tipo de espaço
+                    </label>
+
+                    <select id="alugarTipoEspaco">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="transporte">
+                            Transporte
+                        </option>
+
+                        <option value="armazem">
+                            Armazém
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Tipo de carga
+                    </label>
+
+                    <select id="alugarTipoCarga">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="carga-pequena">
+                            Carga pequena
+                        </option>
+
+                        <option value="moveis">
+                            Móveis e mudanças
+                        </option>
+
+                        <option value="carga-empresarial">
+                            Carga empresarial
+                        </option>
+
+                        <option value="armazenamento">
+                            Armazenamento
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                class="btn btn-red btn-full"
+                onclick="filtrarAluguel()"
+            >
+                Encontrar espaço
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ARMAZÉM -->
+
+        <div class="alugar-box">
+
+
+            <div class="box-heading">
+
+                <span>
+                    02
+                </span>
+
+                <div>
+
+                    <h2>
+                        Encontrar espaço em armazém
+                    </h2>
+
+                    <p>
+                        Procure espaço para armazenar seus produtos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label>
+                        Localização
+                    </label>
+
+                    <input
+                        id="alugarArmazemLocal"
+                        type="text"
+                        placeholder="Ex: Guarulhos"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Capacidade necessária (m³)
+                    </label>
+
+                    <input
+                        id="alugarArmazemCapacidade"
+                        type="number"
+                        placeholder="Ex: 100"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                        Tempo necessário
+                    </label>
+
+                    <select id="alugarArmazemTempo">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option>
+                            Até 7 dias
+                        </option>
+
+                        <option>
+                            8 a 30 dias
+                        </option>
+
+                        <option>
+                            1 a 3 meses
+                        </option>
+
+                        <option>
+                            Mais de 3 meses
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                class="btn btn-red btn-full"
+                onclick="filtrarAluguelArmazem()"
+            >
+                Encontrar armazém
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTATO
+===================================================== -->
+
+<section
+    id="contato"
+    class="pagina"
+>
+
+
+    <div class="pagina-header">
+
+        <span>
+            MOVEON · CONTATO
+        </span>
+
+        <h1>
+            Vamos conectar
+            <strong>
+                sua empresa.
+            </strong>
+        </h1>
+
+        <p>
+            Entre em contato com a Moveon para saber mais
+            sobre a plataforma.
+        </p>
+
+    </div>
+
+
+
+    <section class="contato-grid">
+
+
+        <div class="contato-card">
+
+            <span>
+                E-MAIL
+            </span>
+
+            <h2>
+                transporte.moveon@gmail.com
+            </h2>
+
+            <p>
+                Entre em contato para dúvidas, sugestões
+                ou informações sobre a plataforma.
+            </p>
+
+            <a
+                href="mailto:transporte.moveon@gmail.com"
+                class="btn btn-red"
+            >
+                Enviar e-mail
+            </a>
+
+        </div>
+
+
+
+        <div class="contato-card">
+
+            <span>
+                MOVEON
+            </span>
+
+            <h2>
+                Transforme o Brasil.
+            </h2>
+
+            <p>
+                Aproveite melhor os espaços que já existem
+                e conecte empresas em todo o país.
+            </p>
+
+            <button
+                class="btn btn-outline-dark"
+                onclick="abrirAba('oferecer')"
+            >
+                Oferecer espaço
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+
+        <img
+            src="assets/logo.png"
+            alt="Moveon"
+        >
+
+        <p>
+            Moveon · Transforme o Brasil
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a
+            href="#inicio"
+            onclick="abrirAba('inicio')"
+        >
+            Início
+        </a>
+
+        <a
+            href="#oferecer"
+            onclick="abrirAba('oferecer')"
+        >
+            Oferecer espaço
+        </a>
+
+        <a
+            href="#especificacoes"
+            onclick="abrirAba('especificacoes')"
+        >
+            Especificações
+        </a>
+
+        <a
+            href="#mapa"
+            onclick="abrirAba('mapa')"
+        >
+            Mapa
+        </a>
+
+        <a
+            href="#alugar"
+            onclick="abrirAba('alugar')"
+        >
+            Encontrar espaço
+        </a>
+
+        <a
+            href="#contato"
+            onclick="abrirAba('contato')"
+        >
+            Contato
+        </a>
+
+    </div>
+
+
+    <div class="footer-contato">
+
+        <span>
+            CONTATO
+        </span>
+
+        <a href="mailto:transporte.moveon@gmail.com">
+            transporte.moveon@gmail.com
+        </a>
+
+        <p>
+            Conectando espaços.
+            Movendo negócios.
+        </p>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Moveon
+        </span>
+
+        <span>
+            Transforme o Brasil
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+
+</html>
