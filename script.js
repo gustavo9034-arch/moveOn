@@ -76,14 +76,41 @@ function normalizarCidade(texto) {
 }
 
 
-function obterCoordenadas(cidade) {
+async function obterCoordenadas(cidade) {
+
     const cidadeNormalizada = normalizarCidade(cidade);
 
     if (coordenadasCidades[cidadeNormalizada]) {
         return coordenadasCidades[cidadeNormalizada];
     }
 
-    return null;
+    try {
+
+        const resposta = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=br&q=${encodeURIComponent(cidade + ", Brasil")}`
+        );
+
+        if (!resposta.ok) {
+            return null;
+        }
+
+        const resultados = await resposta.json();
+
+        if (!resultados.length) {
+            return null;
+        }
+
+        return [
+            Number(resultados[0].lat),
+            Number(resultados[0].lon)
+        ];
+
+    } catch (erro) {
+
+        console.error("Erro ao buscar coordenadas:", erro);
+
+        return null;
+    }
 }
 
 
@@ -936,7 +963,7 @@ async function cadastrarTransporte() {
         return;
     }
 
-    const coordenadas = obterCoordenadas(origem);
+    const coordenadas = await obterCoordenadas(origem);
 
     if (!coordenadas) {
 
@@ -1078,7 +1105,7 @@ async function cadastrarArmazem() {
         return;
     }
 
-    const coordenadas = obterCoordenadas(local);
+    const coordenadas = await obterCoordenadas(local);
 
     if (!coordenadas) {
 
